@@ -11,9 +11,16 @@ def poly_integral(poly, C=0):
     Returns:
         list of integers
     """
-    if (
-            not isinstance(poly, list)
-            or not all(isinstance(i, (int, float)) for i in poly)
-            or not isinstance(C, (int, float))):
-        return None
-    return [C] + [(poly[i] / (i + 1)) for i in range(len(poly))]
+    if not poly:
+        return [C]
+
+    integral = [C]
+
+    for i, coef in enumerate(poly):
+        term = coef / (i + 1)
+        integral.append(int(term) if term.is_integer() else term)
+
+    while len(integral) > 1 and integral[-1] == 0:
+        integral.pop()
+
+    return integral
