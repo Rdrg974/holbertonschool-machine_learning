@@ -13,8 +13,8 @@ def poly_integral(poly, C=0):
     """
     if (
             not isinstance(poly, list)
-            or not isinstance(C, int)
-            or not all(isinstance(i, int) for i in poly)):
+            or not isinstance(C, (int, float))
+            or not all(isinstance(i, (int, float)) for i in poly)):
         return None
 
     integral = [C]
