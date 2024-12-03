@@ -10,5 +10,6 @@ def summation_i_squared(n: int) -> int:
     Returns:
         int: The sum of the squares of the first n natural numbers.
     """
-    list = (range(1, n + 1))
-    return sum([i ** 2 for i in list])
+    if not isinstance(n, int):
+        return None
+    return (n * n) + summation_i_squared(n - 1) if n > 0 else 0
