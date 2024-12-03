@@ -19,7 +19,7 @@ def poly_integral(poly, C=0):
 
     if not poly:
         return None
-    
+
     integral = [C]
 
     for i, coef in enumerate(poly):
