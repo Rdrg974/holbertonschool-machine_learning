@@ -2,7 +2,7 @@
 """A function that calculates the sum of a list of numbers."""
 
 
-def summation_i_squared(n: int) -> int:
+def summation_i_squared(n):
     """
     Calculate the sum of the squares of the first n natural numbers.
     Parameters:
