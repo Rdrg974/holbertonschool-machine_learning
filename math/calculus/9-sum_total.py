@@ -10,6 +10,6 @@ def summation_i_squared(n):
     Returns:
         int: The sum of the squares of the first n natural numbers.
     """
-    if not isinstance(n, int) or n < 0:
+    if not isinstance(n, int) or n < 1:
         return None
     return n * (n + 1) * (2 * n + 1) // 6
