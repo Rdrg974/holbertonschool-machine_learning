@@ -17,6 +17,9 @@ def poly_integral(poly, C=0):
             or not all(isinstance(i, (int, float)) for i in poly)):
         return None
 
+    if not poly:
+        return None
+    
     integral = [C]
 
     for i, coef in enumerate(poly):
