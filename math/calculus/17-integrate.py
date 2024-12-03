@@ -11,8 +11,8 @@ def poly_integral(poly, C=0):
     Returns:
         list of integers
     """
-    if not poly:
-        return [C]
+    if not isinstance(poly, list) or not isinstance(C, int):
+        return None
 
     integral = [C]
 
