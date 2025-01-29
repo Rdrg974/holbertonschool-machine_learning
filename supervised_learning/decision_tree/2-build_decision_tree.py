@@ -101,6 +101,8 @@ class Node:
         new_text = "    +--" + lines[0] + "\n"
         for x in lines[1:]:
             new_text += ("       " + x) + "\n"
+        if new_text.endswith("\n"):
+            new_text = new_text[:-1]
         return new_text
 
     def __str__(self):
@@ -121,6 +123,7 @@ class Node:
             result += self.left_child_add_prefix(str(self.left_child))
         if self.right_child:
             result += self.right_child_add_prefix(str(self.right_child))
+
         return result
 
 
