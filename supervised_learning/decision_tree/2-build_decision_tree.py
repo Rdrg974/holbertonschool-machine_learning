@@ -124,6 +124,8 @@ class Node:
         if self.right_child:
             result += self.right_child_add_prefix(str(self.right_child))
 
+        if self.depth == 0:
+            result += "\n"
         return result
 
 
