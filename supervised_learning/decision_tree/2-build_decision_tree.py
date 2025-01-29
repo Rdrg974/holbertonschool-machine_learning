@@ -100,7 +100,7 @@ class Node:
         lines = text.split("\n")
         new_text = "    +--" + lines[0] + "\n"
         for x in lines[1:]:
-            new_text += ("    |  " + x) + "\n"
+            new_text += ("       " + x) + "\n"
         return new_text
 
     def __str__(self):
@@ -111,9 +111,12 @@ class Node:
         Returns:
         - str: A string representation of the node and its subtrees.
         """
-        if self.is_leaf:
-            return f"Leaf({self.value})"
-        result = f"Node(feature={self.feature}, threshold={self.threshold})\n"
+        result = f"[feature={self.feature}, threshold={self.threshold}]\n"
+        if self.is_root:
+            result = "root " + result
+        else:
+            result = "-> node " + result
+
         if self.left_child:
             result += self.left_child_add_prefix(str(self.left_child))
         if self.right_child:
