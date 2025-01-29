@@ -37,7 +37,8 @@ class Node:
 
     def max_depth_below(self):
         """
-        Computes the maximum depth of the subtrees starting from the current node.
+        Computes the maximum depth of the subtrees
+        starting from the current node.
 
         Returns:
         - The maximum depth among the left and right subtrees.
