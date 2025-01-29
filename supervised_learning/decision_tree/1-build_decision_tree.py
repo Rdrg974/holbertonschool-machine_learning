@@ -100,6 +100,16 @@ class Leaf(Node):
         return self.depth
 
     def count_nodes_below(self, only_leaves=False):
+        """
+        Counts only the leaf node itself, since it doesn't have children.
+
+        Parameters:
+        - only_leaves (bool): This parameter is ignored
+        for leaf nodes since it will always count the leaf.
+
+        Returns:
+        - int: Always returns 1 as it counts the leaf node itself.
+        """
         return 1
 
 
@@ -143,4 +153,14 @@ class Decision_Tree():
         return self.root.max_depth_below()
 
     def count_nodes(self, only_leaves=False):
+        """
+        Counts the nodes in the tree, starting from the root node.
+
+        Parameters:
+        - only_leaves (bool): If True, counts only leaf nodes.
+        If False, counts all nodes.
+
+        Returns:
+        - int: The total number of nodes in the tree .
+        """
         return self.root.count_nodes_below(only_leaves=only_leaves)
